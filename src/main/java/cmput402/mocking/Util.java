@@ -28,4 +28,13 @@ public class Util {
 		}
 		return count;
 	} 
+	
+	public int edmontonRatio(int total, int inEdmonton) throws Exception{
+		
+		if(inEdmonton==0) {
+			throw new Exception();
+		}
+		return total/inEdmonton;
+		
+	}
 }

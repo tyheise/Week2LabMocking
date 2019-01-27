@@ -21,24 +21,6 @@ public class AppTest
 {
 	
 	Util util =new Util();
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
-    
     
    public void testCapitalizeName() {
 	   
@@ -48,6 +30,7 @@ public class AppTest
 	   
    }
    
+
    public void testCountACity() {
 
 	   // so this city is now a mock instance of City
@@ -60,18 +43,29 @@ public class AppTest
        
 
        
-       List<String> mockCityList= new ArrayList<String>();
-       mockCityList.add("Edmonton");
-       mockCityList.add("Toronto");
-       
-       when(city.listCities()).thenReturn(mockCityList);
-        
-       
-       int numCities=util.countACity(city);
-       assert(numCities==1);
+       List<String> mockCityList1= new ArrayList<String>();
+       mockCityList1.add("Edmonton");
+       mockCityList1.add("Toronto");
        
        
-	  
+       // we can test two thenReturn
+       // will return list1 in first time, and list two in second call
+       
+       List<String> mockCityList2= new ArrayList<String>();
+       mockCityList2.add("Edmonton");
+       mockCityList2.add("Edmonton");
+       
+       when(city.listCities()).thenReturn(mockCityList1).thenReturn(mockCityList2);
+       
+       assert(1==util.countACity(city));
+       assert(2==util.countACity(city));
+       // do some testing with two thenReturn.
+       //firstime called will execute the first return, second time call will execute 
+       // second return
+       
+	  // now work with anyInt, 
+       // then, another example with thenThrow(new RuntimeException)
    }
+   
  
 }
