@@ -1,16 +1,10 @@
 package service;
 
-import java.awt.List;
+import java.util.List;
 
-public class City {
+public interface City {
 	
-	public List returnAllCities() {
-		
-		//This is very expensive; and it calls some remote APIs
-		//But this is tested well by other teams. We can rely on it. 
-		
-		return null;
-	}
+	//okay, someone has implemented it, but it's online service and slow
+	public List<String> listCities();
 
-	
 }
