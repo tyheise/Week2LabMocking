@@ -16,5 +16,7 @@ public class Main
     	
     	Address address3= new Address("University of Victoria", "Victoria");
     	Employee employee3= new Employee("Abram hindle", 2, 70000, address3);
+    	 
+    	
     }
 }
