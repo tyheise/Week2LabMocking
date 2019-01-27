@@ -2,6 +2,10 @@ package cmput402.mocking;
 
 import static org.mockito.Mock.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -45,8 +49,28 @@ public class AppTest
    }
    
    public void testCountACity() {
+
+	   // so this city is now a mock instance of City
 	   City city=mock(City.class);
-	  
+	   
+       //no implementation, yet returned the default value
+       //This is a big advantage of mockito. 
+
+       assert(city.listCities().size()==0);
+       
+
+       
+       List<String> mockCityList= new ArrayList<String>();
+       mockCityList.add("Edmonton");
+       mockCityList.add("Toronto");
+       
+       when(city.listCities()).thenReturn(mockCityList);
+        
+       
+       int numCities=util.countACity(city);
+       assert(numCities==1);
+       
+       
 	  
    }
  
