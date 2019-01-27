@@ -19,3 +19,12 @@ Everytime we run our test suite, it will take a lot of time to execute because o
 but they are not done yet). How can we filter the salary if that service from other team is not completed yet?
 
 
+For mockito:
+
+Window > Preferences > Java > Editor > Content Assist > Favorites
+org.junit.Assert // this is done. 
+
+org.mockito.BDDMockito
+org.mockito.Mockito
+org.hamcrest.Matchers
+org.hamcrest.CoreMatchers
