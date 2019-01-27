@@ -3,6 +3,7 @@ package cmput402.mocking;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import stub.CityStub;
 
 /**
  * Unit test for simple App.
@@ -10,6 +11,8 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
+	
+	Util util =new Util();
     /**
      * Create the test case
      *
@@ -30,11 +33,15 @@ public class AppTest
     
     
    public void testCapitalizeName() {
-	   Util util =new Util();
+	   
 	   assert("Abram Hindle".equals(util.capitalizeName("abram Hindle")));
 	   assert("Abram Hindle".equals(util.capitalizeName("abram Hindle")));
 	   assert("Abram Hindle".equals(util.capitalizeName("abram hindle")));
 	   
+   }
+   
+   public void testCountACity() {
+	   assert(2==util.countACity(new CityStub()));
    }
  
 }
