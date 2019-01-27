@@ -5,7 +5,7 @@ import java.util.List;
 
 import service.City;
 
-public class CityStub implements City {
+public class CityMock implements City {
 
 	public List<String> listCities() {
 		

@@ -1,9 +1,13 @@
 package cmput402.mocking;
 
+import static org.mockito.Mock.*;
+import static org.mockito.Mockito.mock;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import stub.CityStub;
+import service.City;
+import stub.CityMock;
 
 /**
  * Unit test for simple App.
@@ -41,7 +45,9 @@ public class AppTest
    }
    
    public void testCountACity() {
-	   assert(2==util.countACity(new CityStub()));
+	   City city=mock(City.class);
+	  
+	  
    }
  
 }
