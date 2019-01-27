@@ -67,5 +67,13 @@ public class AppTest
        // then, another example with thenThrow(new RuntimeException)
    }
    
+   public void testEdmontonRatio() {
+	   try {
+	   assert(25000==util.edmontonRatio(50000,0));
+	   fail("It should have thrown an exception");
+	   }catch(Exception e) {}
+	   
+   }
+   
  
 }
