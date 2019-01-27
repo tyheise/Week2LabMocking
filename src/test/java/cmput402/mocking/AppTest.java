@@ -27,12 +27,14 @@ public class AppTest
     {
         return new TestSuite( AppTest.class );
     }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+    
+    
+   public void testCapitalizeName() {
+	   Util util =new Util();
+	   assert("Abram Hindle".equals(util.capitalizeName("abram Hindle")));
+	   assert("Abram Hindle".equals(util.capitalizeName("abram Hindle")));
+	   assert("Abram Hindle".equals(util.capitalizeName("abram hindle")));
+	   
+   }
+ 
 }
