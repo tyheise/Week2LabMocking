@@ -67,6 +67,8 @@ public class AppTest
        // then, another example with thenThrow(new RuntimeException)
    }
    
+   //exception testing is easier with Junit 4 with the @Test annotation
+   //e.g.,  @Test (expected = RunTimeException.class)
    public void testEdmontonRatio() {
 	   try {
 	   assert(25000==util.edmontonRatio(50000,0));
