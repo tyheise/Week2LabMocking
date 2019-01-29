@@ -2,6 +2,8 @@ package cmput402.mocking;
 
 import static org.mockito.Mock.*;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -11,7 +13,6 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import service.City;
-import stub.CityMock;
 
 /**
  * Unit test for simple App.
@@ -39,7 +40,6 @@ public class AppTest
        //no implementation, yet returned the default value
        //This is a big advantage of mockito. 
 
-       assert(city.listCities().size()==0);
        
 
        
@@ -59,6 +59,7 @@ public class AppTest
        
        assert(1==util.countACity(city));
        assert(2==util.countACity(city));
+       verify(city, times(2)).listCities();
        // do some testing with two thenReturn.
        //firstime called will execute the first return, second time call will execute 
        // second return
