@@ -7,7 +7,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class AppTest
     extends TestCase
 {
     /**
@@ -34,5 +34,15 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+    }
+
+    public void testCapitalizeName(){
+        assert("Tyler Heise".equals(Main.capitalizeName("tyler heise")))
+    }
+
+    public void testFilterEdmonton(){
+        Util util = new Util();
+        CityStub stub = new CityStub();
+        assert(3==util.filterEdmonton(stub))
     }
 }
